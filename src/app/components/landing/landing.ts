@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Home } from "../home/home";
 
 @Component({
   selector: 'app-landing',
-  imports: [Home],
+  imports: [],
   templateUrl: './landing.html',
   styleUrl: './landing.css',
   standalone: true
