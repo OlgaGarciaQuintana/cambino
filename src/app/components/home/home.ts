@@ -9,12 +9,18 @@ import { Component } from '@angular/core';
 })
 export class Home {
 
+  nombre = "Olga";
+  titulo = "Deku"
+  ancho=300;
+
   constructor(){
     console.log("constructor");
+    this.nombre="Jose";
   }
 
   ngOnInit(){
     console.log("ngOnInit")
+    this.nombre="Ana";
   }
 
 }

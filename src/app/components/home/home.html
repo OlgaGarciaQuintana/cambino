@@ -1,1 +1,18 @@
 <h1>Este es el componente home</h1>
+
+<h2>Vamos a poner ejemplos de comunicación entre plantilla y controlador del componente home</h2>
+
+<h3>Interpolación</h3>
+<p>Hola {{ nombre }}</p>
+<!--otra forma de interpolación-->
+<p>Hola {{ nombre.toUpperCase() }} (en mayuscula)</p>
+<p>{{'Hola ' + nombre }}</p>
+<p>Hola {{ nombre.length }} (número de letras de mi nombre)</p>
+<p>Suma: 25 + 45 = {{25 + 45}}</p>
+
+<h3>Atributos</h3>
+<!--AL LLEVAR EL ATRIBUTO LOS CORCHETES, SABE QUE "ANCHO" ES UNA EXPRESION, UNA VARIABLE-->
+<img src="https://frikanime.com/wp-content/uploads/2025/08/Izuku-Midoriya-Dark-Deku-Tougen-Anki-ARTFXJ-18-7.jpg"
+    alt="Imagen de Deku" title="{{titulo}}" [width]="ancho">
+
+
