@@ -15,4 +15,6 @@
 <img src="https://frikanime.com/wp-content/uploads/2025/08/Izuku-Midoriya-Dark-Deku-Tougen-Anki-ARTFXJ-18-7.jpg"
     alt="Imagen de Deku" title="{{titulo}}" [width]="ancho">
 
-
+<h3>Clases</h3>
+<div [ngClass]="{error: !hasError}">Esto es un error</div>
+<div [ngClass]="{error: hasError}">Esto NO es un error</div>

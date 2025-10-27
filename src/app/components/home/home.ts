@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home', //esto es para usarlo en html
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true
@@ -12,6 +13,7 @@ export class Home {
   nombre = "Olga";
   titulo = "Deku"
   ancho=300;
+  hasError = false;
 
   constructor(){
     console.log("constructor");
