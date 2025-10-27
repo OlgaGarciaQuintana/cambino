@@ -9,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class Home {
 
+  constructor(){
+    console.log("constructor");
+  }
+
+  ngOnInit(){
+    console.log("ngOnInit")
+  }
+
 }
