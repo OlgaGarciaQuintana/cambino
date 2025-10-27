@@ -37,4 +37,8 @@ export class Home {
     return a + b;
   }
 
+  cambiarNombre() {
+    this.nombre="Juan";
+  }
+
 }
