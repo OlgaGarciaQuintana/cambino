@@ -38,7 +38,11 @@ export class Home {
   }
 
   cambiarNombre() {
-    this.nombre="Juan";
+    this.nombre = "Juan";
+  }
+
+  cambiarNombreInput(event: any) {
+    this.nombre = event.target.value;
   }
 
 }

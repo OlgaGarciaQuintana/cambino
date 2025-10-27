@@ -25,4 +25,10 @@
 
 <h2>Vamos a poner ejemplos de comunicación de la plantilla (html) al controlador (ts)</h2>
 
-<button (click)="cambiarNombre()">Cambiar Nombre</button>
+<!--cambia el nombre de Ana a Juan-->
+<button (click)="cambiarNombre()">Cambiar Nombre</button> <br/>
+
+Nombre: <input type="text" (input)="cambiarNombreInput($event)" /><br/>
+
+<input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
+<p>Nombre actual: {{ nombre }}</p>
