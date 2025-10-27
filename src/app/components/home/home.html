@@ -39,7 +39,7 @@ Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
 
 <h1>Control del flujo en la plantila</h1>
 
-<h3>Directiva *ngIf</h3>
+<h3>Directiva *ngIf mejor @ if @ else</h3>
 
 <div *ngIf="nohayError()">Este es un mensaje de error (DEPRECADO)</div>
 <div *ngIf="sihayError()">Este es un mensaje de éxito (DEPRECADO)</div>
@@ -65,3 +65,56 @@ Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
 }
 
 <button (click)="flipMostrar()">Flip Mostrar</button>
+
+<h3>Directiva *ngIf mejor @ for</h3>
+
+<ul>
+    <li *ngFor="let item of items; let i = index">{{i +1}} - {{ item }}</li>
+</ul>
+
+<ul>
+    @for (item of items; track item; let i = $index) {
+        <li>{{ i +1 }} - {{ item }}</li>
+    }
+</ul>
+
+@for (i of [0,1,2,3,4,5]; track i) {
+    <p>VAlor de i = {{ i }}</p>
+}
+
+<h3>Directiva switch mejor @ switch que @ case @ default </h3>
+
+@switch(nombre) {
+  @case('Olga') {
+    <p>Hola Rafa! Eres el administrador.</p>
+  }
+  @case('Ana') {
+    <p>Hola Ana! Eres una usuaria normal.</p>
+  }
+  @default {
+    <p>Hola invitado! No estás registrado.</p>
+  }
+}
+
+<h1>Ejemplo de expresiones en la plantilla</h1>
+
+<p>Resultado de 10 + 20 = {{ 10 + 20 }}</p>
+<p>Resultado de 10 * 5 = {{ 10 * 5 }}</p>
+<p>Resultado de 10 / 2 = {{ 10 / 2 }}</p>
+<p>Resultado de 10 - 3 = {{ 10 - 3 }}</p>
+<p>Resultado de 10 % 3 = {{ 10 % 3 }}</p>
+<p>Resultado de 2 + 3 * 4 = {{ 2 + 3 * 4 }}</p>
+<p>Ejemplo complicado: {{ complicado() }}</p>
+
+<h1>Ejemplos de Pipes en la plantilla</h1>
+
+<!--fechas-->
+<p>Fecha actual: {{ today | date:'longDate' }}</p>
+<p>Hora actual: {{ today | date:'shortTime' }}</p>
+<p>Fecha y hora actual: {{ today | date:'full' }}</p>
+<p>Fecha personalizada: {{ today | date:'EEEE, MMMM d, y' }}</p>    
+<p>Número formateado: {{ 1234567.89 | number:'1.2-2' }}</p>
+<p>Número formateado por rafa: {{ .89 | number:'2.4-6' }}</p>
+<p>Número formateado por rafa: {{ .89879879878978 | number:'2.4-6' }}</p>
+<p>Moneda formateada: {{ 1234567.89 | currency:'USD' }}</p>
+<p>Porcentaje formateado: {{ 0.8534 | percent:'1.2-2' }}</p>

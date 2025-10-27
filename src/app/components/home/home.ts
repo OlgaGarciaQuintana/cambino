@@ -15,6 +15,8 @@ export class Home {
   ancho=300;
   hasError = false;
   mostrar = false;
+  items= ["Manzana", "Banana", "Naranja"];
+  today = new Date();
 
   constructor(){
     console.log("constructor");
@@ -48,6 +50,10 @@ export class Home {
 
   flipMostrar() {
     this.mostrar = !this.mostrar;
+  }
+
+  complicado() {
+    return [1,2,3].map(n => n * 2).filter(n => n > 2);
   }
 
 }
