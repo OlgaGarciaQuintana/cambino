@@ -28,7 +28,9 @@
 <!--cambia el nombre de Ana a Juan-->
 <button (click)="cambiarNombre()">Cambiar Nombre</button> <br/>
 
-Nombre: <input type="text" (input)="cambiarNombreInput($event)" /><br/>
+<!--este cambia en toda la pagina, HASTA EN EL INPUT DE ABAJO, porque se lo hemos dicho-->
+Nombre1: <input type="text" (input)="cambiarNombreInput($event)" /><br/>
 
-<input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
+<!--este cambia en toda la pagina, menos en el input de arriba, porque no se lo hemos dicho-->
+Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
 <p>Nombre actual: {{ nombre }}</p>
