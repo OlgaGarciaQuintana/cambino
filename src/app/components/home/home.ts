@@ -14,6 +14,7 @@ export class Home {
   titulo = "Deku"
   ancho=300;
   hasError = false;
+  mostrar = false;
 
   constructor(){
     console.log("constructor");
@@ -43,6 +44,10 @@ export class Home {
 
   cambiarNombreInput(event: any) {
     this.nombre = event.target.value;
+  }
+
+  flipMostrar() {
+    this.mostrar = !this.mostrar;
   }
 
 }

@@ -31,6 +31,37 @@
 <!--este cambia en toda la pagina, HASTA EN EL INPUT DE ABAJO, porque se lo hemos dicho-->
 Nombre1: <input type="text" (input)="cambiarNombreInput($event)" /><br/>
 
+<h2>Double data binding</h2>
+
 <!--este cambia en toda la pagina, menos en el input de arriba, porque no se lo hemos dicho-->
 Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
 <p>Nombre actual: {{ nombre }}</p>
+
+<h1>Control del flujo en la plantila</h1>
+
+<h3>Directiva *ngIf</h3>
+
+<div *ngIf="nohayError()">Este es un mensaje de error (DEPRECADO)</div>
+<div *ngIf="sihayError()">Este es un mensaje de éxito (DEPRECADO)</div>
+<div *ngIf="false">Este es un mensaje de error (DEPRECADO)</div>
+<div *ngIf="true">Este es un mensaje de éxito (DEPRECADO)</div>
+
+@if (nohayError()) {
+    <div>Este es un mensaje de error</div>
+} @else {
+    <div>Este es un mensaje de éxito</div>
+}
+
+@if (false) {
+    <div>Este es un mensaje de error</div>
+} @else {
+    <div>Este es un mensaje de éxito</div>
+}
+
+@if(mostrar) {
+    <h3>Mostrando el contenido1</h3>
+} @else {
+    <h3>Mostrando el contenido2</h3>
+}
+
+<button (click)="flipMostrar()">Flip Mostrar</button>
