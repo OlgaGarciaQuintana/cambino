@@ -25,4 +25,16 @@ export class Home {
     this.nombre="Ana";
   }
 
+  nohayError() {
+    return this.hasError;
+  }
+
+  sihayError() {
+    return !this.hasError;
+  }
+
+  suma(a: number, b: number): number {
+    return a + b;
+  }
+
 }

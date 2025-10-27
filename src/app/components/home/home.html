@@ -9,6 +9,8 @@
 <p>{{'Hola ' + nombre }}</p>
 <p>Hola {{ nombre.length }} (número de letras de mi nombre)</p>
 <p>Suma: 25 + 45 = {{25 + 45}}</p>
+<p>Suma: 25 + 45 = {{suma(25, 45)}}</p>
+<p>Suma: 15 + 15 = {{suma(15, 15)}}</p>
 
 <h3>Atributos</h3>
 <!--AL LLEVAR EL ATRIBUTO LOS CORCHETES, SABE QUE "ANCHO" ES UNA EXPRESION, UNA VARIABLE-->
@@ -18,3 +20,5 @@
 <h3>Clases</h3>
 <div [ngClass]="{error: !hasError}">Esto es un error</div>
 <div [ngClass]="{error: hasError}">Esto NO es un error</div>
+<div [ngClass]="{error: sihayError()}">Esto SI es un error</div>
+<div [ngClass]="{error: nohayError()}">Esto NO es un error</div>
