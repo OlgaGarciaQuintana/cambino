@@ -9,5 +9,5 @@ import { Home } from "../home/home";
   standalone: true
 })
 export class Landing {
-
+  //mis cambios
 }
