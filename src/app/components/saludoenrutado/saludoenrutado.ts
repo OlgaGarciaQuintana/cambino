@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterLink } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-saludoenrutado', //esto es para usarlo en html
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './saludoenrutado.html',
   styleUrl: './saludoenrutado.css',
   standalone: true
