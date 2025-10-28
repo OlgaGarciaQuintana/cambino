@@ -18,9 +18,15 @@
 
     <li><a [href]="'saludoenrutado/' + nombreUsuario">Tercero: Ir al componente saludo enrutado a que me salude (usando binding)</a></li>
 
-    <li><button (click)="irASaludoEnrutado()">Cuarto: Ir al componente saludo enrutado a que me salude (usando método)</button></li>
+    <li><button (click)="irASaludoEnrutado()">Cuarto: Ir al componente saludo enrutado a que me salude 
+        (usando método en el controlador)</button></li>
 
     <li><button (click)="irASaludoEnrutado2()">Quinto: Ir al componente saludo enrutado a que me salude (usando método)</button></li>
+
+     <li>
+        <a [routerLink]="['/saludoenrutado', nombreUsuario]">Sexto: Ir al componente saludo enrutado a que me salude 
+            (usando routerLink en plantilla)</a>
+     </li>
 
 </ul>
 

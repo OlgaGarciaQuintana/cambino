@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home', //esto es para usarlo en html
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true
@@ -32,5 +32,7 @@ export class Home {
   irASaludoEnrutado2() {
     this.oRouter.navigate(["saludoenrutado", this.nombreUsuario]);
   }
+
+  
 
 }
