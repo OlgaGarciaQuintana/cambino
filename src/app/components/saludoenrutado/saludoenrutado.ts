@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-saludoenrutado', //esto es para usarlo en html
@@ -11,7 +11,11 @@ import { RouterLink } from "@angular/router";
 })
 export class Saludoenrutado {
 
-  constructor(){
+  nombre: string | null = null;
+
+  //injectar el ActivatedRoute para leer parámetros de la ruta
+
+  constructor(private route: ActivatedRoute){
    
   }
 
