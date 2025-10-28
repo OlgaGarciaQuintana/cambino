@@ -11,12 +11,18 @@ import { RouterLink } from "@angular/router";
 })
 export class Home {
 
+  nombreUsuario: string = "";
+
   constructor(){
    
   }
 
   ngOnInit(){
    
+  }
+
+  cambiarNombre(strNuevoNombre:string){
+    this.nombreUsuario = strNuevoNombre;
   }
 
 }

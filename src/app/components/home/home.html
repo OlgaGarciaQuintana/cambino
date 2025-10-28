@@ -4,3 +4,11 @@
 <a href="ejer01">Ir al ejercicio 01 de la clase</a><br>
 <a href="landing">Ir a la página de landing</a><br>
 <a href="saludoenrutado">Ir a la página de saludo enrutado</a>
+
+<hr>
+
+<h1>Hola {{nombreUsuario}}</h1>>
+<input type="text" placeholder="Escribe tu nombre" [value]="nombreUsuario" (input)="cambiarNombre($event.target.value)"><br />
+<a href="saludoenrutado">Ir al compoente saludo enrutado a que me salude</a>
+
+<hr>
