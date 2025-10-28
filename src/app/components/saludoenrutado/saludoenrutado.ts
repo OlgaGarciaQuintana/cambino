@@ -14,7 +14,7 @@ export class Saludoenrutado {
   nombre: string | null = null;
 
   constructor(private route: ActivatedRoute){
-    this.nombre = this.route.snapshot.paramMap.get("nombre");
+    this.nombre = this.route.snapshot.params["nombre"];
   }
 
   ngOnInit(){
