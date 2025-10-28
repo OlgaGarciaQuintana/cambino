@@ -13,10 +13,8 @@ export class Saludoenrutado {
 
   nombre: string | null = null;
 
-  //injectar el ActivatedRoute para leer parámetros de la ruta
-
   constructor(private route: ActivatedRoute){
-   
+    this.nombre = this.route.snapshot.paramMap.get("nombre");
   }
 
   ngOnInit(){
