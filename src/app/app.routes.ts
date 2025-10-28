@@ -7,7 +7,7 @@ export const routes: Routes = [
     //La ruta predefinida va a ser home
     {path: "", component: Home },
     {path: "home", component: Home},
-    {path: "ejer01", component: Ejercicio01clase"}
+    {path: "ejer01", component: Ejercicio01clase},
     {path: "landing", component: Landing}
 
 
