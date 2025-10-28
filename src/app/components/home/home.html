@@ -11,10 +11,17 @@
 <input type="text" placeholder="Escribe tu nombre" [value]="nombreUsuario" 
     (input)="cambiarNombre($event.target.value)"><br />
     <h3>OJO, 3 TIPOS DE ENLACE:</h3>
-<a href="saludoenrutado">Primero: Ir al componente saludo enrutado a que me salude (NO FUNCIONA PORQUE NO TIENE EL PARAMETRO)</a><br>
+<ul>
+    <li><a href="saludoenrutado">Primero: Ir al componente saludo enrutado a que me salude (NO FUNCIONA PORQUE NO TIENE EL PARAMETRO)</a></li>
 
-<a href="saludoenrutado/{{nombreUsuario}}"> Segundo: Ir al componente saludo enrutado a que me salude</a><br>
+    <li><a href="saludoenrutado/{{nombreUsuario}}"> Segundo: Ir al componente saludo enrutado a que me salude</a></li>
 
-<a [href]="'saludoenrutado/' + nombreUsuario">Tercero: Ir al componente saludo enrutado a que me salude</a>
+    <li><a [href]="'saludoenrutado/' + nombreUsuario">Tercero: Ir al componente saludo enrutado a que me salude (usando binding)</a></li>
+
+    <li><button (click)="irASaludoEnrutado()">Cuarto: Ir al componente saludo enrutado a que me salude (usando método)</button></li>
+
+    <li><button (click)="irASaludoEnrutado2()">Quinto: Ir al componente saludo enrutado a que me salude (usando método)</button></li>
+
+</ul>
 
 <hr>
