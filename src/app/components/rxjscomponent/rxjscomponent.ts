@@ -182,4 +182,6 @@ export class Rxjscomponent {
       complete: () => console.log("Flujo de datos completado.")
     });
   }
+
+  //empezamos con el ejemplo del filter
 }
