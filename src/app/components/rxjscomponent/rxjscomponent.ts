@@ -61,5 +61,16 @@ export class Rxjscomponent {
       complete: () => console.log("Flujo de datos completado.")
     });
   }
+
+  ejemplo03() {
+    console.log("Ejecutando ejemplo 03 de RxJS");
+    this.numero$.subscribe({
+      next: (numero) => {
+        console.log("Numero recibido: " + numero);
+      },
+      error: (err) => console.log("Error al recibir el numero", err),
+      complete: () => console.log("Flujo de datos completado.")
+    });
+  }
   
 }
