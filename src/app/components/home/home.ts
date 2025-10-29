@@ -4,7 +4,7 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home', //esto es para usarlo en html
-  imports: [CommonModule, RouterLink, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true
@@ -32,7 +32,5 @@ export class Home {
   irASaludoEnrutado2() {
     this.oRouter.navigate(["saludoenrutado", this.nombreUsuario]);
   }
-
   
-
 }
