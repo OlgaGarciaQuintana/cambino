@@ -184,4 +184,7 @@ export class Rxjscomponent {
   }
 
   //empezamos con el ejemplo del filter
+
+  //concepto de subject
+  //ejemplos de los distintos tipos de subject: subject, behaviorSubject, replaySubject, asyncSubject
 }
