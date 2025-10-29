@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { interval, Observable, of } from 'rxjs';
 
 class Persona {
   nombre: string = "";
@@ -109,5 +109,61 @@ export class Rxjscomponent {
     })
 
   }
-  
+
+  ejemplo06() {
+    console.log("Ejecutando ejemplo 06 de RxJS: emisión de strings");
+    const palabras$ = new Observable<string>((observer) => {
+      observer.next("Hola");
+      observer.next("que");
+      observer.next("tal");
+      observer.error("¡Ha ocurrido un error en la emisión de palabras!");
+      observer.next("soy");
+      observer.next("rafa");
+      observer.complete();
+    });
+    palabras$.subscribe({
+      next: (palabra) => {
+        console.log("Palabra recibida: " + palabra);
+      },
+      error: (err) => console.log("Error al recibir la palabra", err),
+      complete: () => console.log("Flujo de datos completado.")
+    })
+  }
+
+  ejemplo07() {
+    console.log("Ejecutando ejemplo 07 de RxJS: emisión de strings con error");
+    const palabras$ = new Observable<string>((observer) => {
+      observer.next("Hola");
+      observer.next("que");
+      observer.next("tal");
+      observer.error("¡Ha ocurrido un error en la emisión de palabras!");
+      observer.next("soy");
+      observer.next("rafa");
+      observer.complete();
+    });
+
+    palabras$.subscribe({
+      next: palabra => console.log("Palabra recibida: " + palabra),
+      error: err => console.log("Error al recibir la palabra", err),
+      complete: () => console.log("Flujo de datos completado.")
+    });
+  }
+
+  ejemplo08() {
+    console.log("Ejecutando ejemplo 08 de RxJS: emisión con Observable.interval(10)");
+    //observable
+    const contador$ = interval(10);
+    //suscripcion
+    const subscription = contador$.subscribe({
+      next: numero => console.log("Numero recibido: " + numero),
+      error: err => console.log("Error al recibir el número:", err),
+      complete: () => console.log("Flujo de datos completado.")
+    });
+    //Dessucribirse después de 5000 ms para detener la emisión
+    setTimeout(() => {
+      subscription.unsubscribe();
+      console.log("Desuscrito del observable de intervalo.");
+    }, 5000)
+  }
+
 }
