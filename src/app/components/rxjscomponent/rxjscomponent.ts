@@ -72,5 +72,17 @@ export class Rxjscomponent {
       complete: () => console.log("Flujo de datos completado.")
     });
   }
+
+  ejemplo04() {
+   console.log("Ejecutando ejemplo 04 de RxJS: emisión por orden");
+   const numeros$: Observable<number> = of(1,2,3,4,5);
+   numeros$.subscribe({
+      next: (numero) => {
+        console.log("Numero recibido: " + numero);
+      },
+      error: (err) => console.log("Error al recibir el numero", err),
+      complete: () => console.log("Flujo de datos completado.")
+    });
+  }
   
 }
