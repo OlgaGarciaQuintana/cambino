@@ -84,5 +84,30 @@ export class Rxjscomponent {
       complete: () => console.log("Flujo de datos completado.")
     });
   }
+
+  ejemplo05() {
+    console.log("Ejecutando ejemplo 05 de RxJS: emisión de string");
+    
+    const contador$ = new Observable<number>((observer) => {
+      let count = 1;
+      const interval = setInterval(() => {
+        observer.next(count);
+        count++;
+        if (count > 5) {
+          clearInterval(interval);
+          observer.complete();
+        }
+      }, 2000);
+    });
+
+    contador$.subscribe({
+      next: (numero) => {
+        console.log("Numero recibido: " + numero);
+      },
+      error: (err) => console.log("Error al recibir el numero", err),
+      complete: () => console.log("Flujo de datos completado.")
+    })
+
+  }
   
 }
