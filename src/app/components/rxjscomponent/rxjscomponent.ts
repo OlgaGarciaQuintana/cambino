@@ -37,8 +37,11 @@ export class Rxjscomponent {
         personas.forEach(persona => {
           console.log(`Nombre: ${persona.nombre}, Edad: ${persona.edad}`);
         });
-      }
+      },
+      error: (err) => console.log("Error al recibir la lista de personas", err),
+      complete: () => console.log("Flujo de datos completado.")
     });
   }
 
+  
 }
