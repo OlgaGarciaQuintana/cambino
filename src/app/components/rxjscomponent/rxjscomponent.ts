@@ -26,7 +26,14 @@ export class Rxjscomponent {
     { nombre: "Lucia", edad: 30 }
   ]
 
+  //Lista de personas
   nombres$: Observable<Persona[]> = of(this.listadoPersonas);
+
+  //Una persona:
+  nombre$: Observable<Persona> = of(this.listadoPersonas[0]);
+
+  //Lista de numeros aleatorios (hasta el 100)
+  numero$: Observable<number> = of(Math.floor(Math.random() *100) +1);
 
   //sale el resultado al inspeccionar
   ejemplo01() {
@@ -43,5 +50,16 @@ export class Rxjscomponent {
     });
   }
 
+  ejemplo02() {
+    console.log("Ejecutando ejemplo de 01 de RxJS")
+    this.nombre$.subscribe({
+      next: (persona) => {
+        console.log("Persona recibida:");
+        console.log(`Nombre: ${persona.nombre}, Edad: ${persona.edad}`)
+      },
+      error: (err) => console.log("Error al recibir la persona", err),
+      complete: () => console.log("Flujo de datos completado.")
+    });
+  }
   
 }
