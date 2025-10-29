@@ -87,17 +87,17 @@ export class Rxjscomponent {
 
   ejemplo05() {
     console.log("Ejecutando ejemplo 05 de RxJS: emisión de string");
-    
+
     const contador$ = new Observable<number>((observer) => {
       let count = 1;
       const interval = setInterval(() => {
         observer.next(count);
         count++;
-        if (count > 5) {
+        if (count > 7) {
           clearInterval(interval);
           observer.complete();
         }
-      }, 2000);
+      }, 1000);
     });
 
     contador$.subscribe({
