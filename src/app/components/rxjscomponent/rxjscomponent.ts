@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { interval, Observable, of } from 'rxjs';
+import { interval, merge, Observable, of } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 class Persona {
   nombre: string = "";
@@ -166,4 +167,19 @@ export class Rxjscomponent {
     }, 5000)
   }
 
+  ejemplo09() {
+    console.log("Ejecutando ejemplo 09 de RxJS");
+    const intervalo1$ = interval(1000);
+    const intervalo2$ = interval(1500);
+    // combinar con el operador merge los dos intervalos
+    const combinado1$ = merge(intervalo1$, intervalo2$);
+    const combinado2$ = combinado1$.pipe(
+      take(10)
+    )
+    combinado2$.subscribe({
+      next: numero => console.log("Numero recibido: " + numero),
+      error: err => console.log("Error al recibir el numero", err),
+      complete: () => console.log("Flujo de datos completado.")
+    });
+  }
 }
