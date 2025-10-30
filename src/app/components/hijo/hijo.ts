@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './hijo.css',
 })
 export class HijoComponent {
-  @Input() mensajeHijo: string = '';
+  @Input() mensajeHijoRecibidoDelPadre: string = '';
 }
