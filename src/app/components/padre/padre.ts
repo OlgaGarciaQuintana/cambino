@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Hijo } from "../hijo/hijo";
+import { HijoComponent } from "../hijo/hijo";
 
 @Component({
   selector: 'app-padre',
-  imports: [Hijo],
+  imports: [HijoComponent],
   templateUrl: './padre.html',
   styleUrl: './padre.css',
 })
