@@ -8,3 +8,5 @@
 
 <!--Aqui esta la conexion con el mensaje hijo-->
 <app-hijo [mensajeHijoRecibidoDelPadre]="mensajeHijoEnviadoDesdeElPadre" (mensajeAlPadreDesdeElHijoEventEmmiter)="recibirMensajeDelHijo($event)"></app-hijo>
+
+<h4>Mensaje del hijo recibido del padre: {{mensajerecibidoDelHijo}}</h4>
