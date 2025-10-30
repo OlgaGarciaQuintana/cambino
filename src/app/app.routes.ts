@@ -5,6 +5,7 @@ import { Ejercicio01clase } from './components/ejercicio01clase/ejercicio01clase
 import { Saludoenrutado } from './components/saludoenrutado/saludoenrutado';
 import { Rxjscomponent } from './components/rxjscomponent/rxjscomponent';
 import { PadreComponent } from './components/padre/padre';
+import { AleatorioComponent } from './components/aleatorio/aleatorio';
 
 export const routes: Routes = [
     //La ruta predefinida va a ser home
@@ -16,4 +17,5 @@ export const routes: Routes = [
     {path: "landing", component: Landing},
     {path: "rx", component: Rxjscomponent },
     {path: "padre", component: PadreComponent },
+    {path: "aleatorio", component: AleatorioComponent },
 ];

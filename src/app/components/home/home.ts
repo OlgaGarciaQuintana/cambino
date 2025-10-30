@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { AleatorioService } from '../../services/aleatorio';
+import { AleatorioComponent } from "../aleatorio/aleatorio";
 
 @Component({
   selector: 'app-home', //esto es para usarlo en html
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AleatorioComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true,
