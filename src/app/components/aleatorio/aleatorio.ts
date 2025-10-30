@@ -9,7 +9,13 @@ import { AleatorioService } from '../../services/aleatorio';
 })
 export class AleatorioComponent {
 
-  constructor(public aleatorioService: AleatorioService) {
+  numeroAleatorio: number = 0;
+
+  constructor(private aleatorioService: AleatorioService) {
+  }
+
+  ngOnInit() {
+    this.numeroAleatorio = this.aleatorioService.generaNumeroAleatorio(40, 60);
   }
 
 }
