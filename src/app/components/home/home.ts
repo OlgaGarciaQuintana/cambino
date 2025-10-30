@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { AleatorioService } from '../../services/aleatorio';
 
 @Component({
   selector: 'app-home', //esto es para usarlo en html
@@ -11,8 +12,9 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 })
 export class Home {
   nombreUsuario: string = '';
+  numeroAleatorio: number = 1;
 
-  constructor(public oRouter: Router) {}
+  constructor(public oRouter: Router, public aleatorioService: AleatorioService) {}
 
   ngOnInit() {}
 
@@ -26,5 +28,9 @@ export class Home {
 
   irASaludoEnrutado2() {
     this.oRouter.navigate(['saludoenrutado', this.nombreUsuario]);
+  }
+
+  obtenerNumeroAleatorio() {
+    this.numeroAleatorio = this.aleatorioService.generaNumeroAleatorio(1, 100);
   }
 }
