@@ -14,4 +14,8 @@ export class PadreComponent {
     this.mensajeHijoEnviadoDesdeElPadre = mensaje;
   }
 
+  recibirMensajeDelHijo(mensajeRecibidoDelHijo: string) {
+    alert("Mensaje recibido del hijo: " + mensajeRecibidoDelHijo);
+  }
+
 }

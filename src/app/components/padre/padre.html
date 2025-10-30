@@ -7,4 +7,4 @@
 <h2>y mi mensaje hoy es el siguiente: {{mensajeHijoEnviadoDesdeElPadre}}</h2>
 
 <!--Aqui esta la conexion con el mensaje hijo-->
-<app-hijo [mensajeHijoRecibidoDelPadre]="mensajeHijoEnviadoDesdeElPadre"></app-hijo>
+<app-hijo [mensajeHijoRecibidoDelPadre]="mensajeHijoEnviadoDesdeElPadre" (mensajeAlPadreDesdeElHijoEventEmmiter)="recibirMensajeDelHijo($event)"></app-hijo>
