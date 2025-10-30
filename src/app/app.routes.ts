@@ -4,6 +4,7 @@ import { Landing } from './components/landing/landing';
 import { Ejercicio01clase } from './components/ejercicio01clase/ejercicio01clase';
 import { Saludoenrutado } from './components/saludoenrutado/saludoenrutado';
 import { Rxjscomponent } from './components/rxjscomponent/rxjscomponent';
+import { PadreComponent } from './components/padre/padre';
 
 export const routes: Routes = [
     //La ruta predefinida va a ser home
@@ -13,5 +14,6 @@ export const routes: Routes = [
      {path: "saludoenrutado", component: Saludoenrutado },
     {path: "saludoenrutado/:nombre", component: Saludoenrutado },
     {path: "landing", component: Landing},
-    {path: "rx", component: Rxjscomponent }
+    {path: "rx", component: Rxjscomponent },
+    {path: "padre", component: PadreComponent },
 ];
