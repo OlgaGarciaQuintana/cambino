@@ -6,26 +6,25 @@ import { Component } from '@angular/core';
   imports: [CommonModule],
   templateUrl: './ejercicio01clase.html',
   styleUrl: './ejercicio01clase.css',
-  standalone: true
+  standalone: true,
 })
 export class Ejercicio01clase {
-
-  nombre = "Olga";
-  titulo = "Deku"
-  ancho=300;
+  nombre = 'Olga';
+  titulo = 'Deku';
+  ancho = 300;
   hasError = false;
   mostrar = false;
-  items= ["Manzana", "Banana", "Naranja"];
+  items = ['Manzana', 'Banana', 'Naranja'];
   today = new Date();
 
-  constructor(){
-    console.log("constructor");
-    this.nombre="Jose";
+  constructor() {
+    console.log('constructor');
+    this.nombre = 'Jose';
   }
 
-  ngOnInit(){
-    console.log("ngOnInit")
-    this.nombre="Ana";
+  ngOnInit() {
+    console.log('ngOnInit');
+    this.nombre = 'Ana';
   }
 
   nohayError() {
@@ -41,7 +40,7 @@ export class Ejercicio01clase {
   }
 
   cambiarNombre() {
-    this.nombre = "Juan";
+    this.nombre = 'Juan';
   }
 
   cambiarNombreInput(event: any) {
@@ -53,7 +52,6 @@ export class Ejercicio01clase {
   }
 
   complicado() {
-    return [1,2,3].map(n => n * 2).filter(n => n > 2);
+    return [1, 2, 3].map((n) => n * 2).filter((n) => n > 2);
   }
-
 }

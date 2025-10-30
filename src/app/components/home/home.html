@@ -8,25 +8,28 @@
 <hr>
 
 <h1>Hola {{nombreUsuario}}</h1>>
-<input type="text" placeholder="Escribe tu nombre" [value]="nombreUsuario" 
+<input type="text" placeholder="Escribe tu nombre" [value]="nombreUsuario"
     (input)="cambiarNombre($event.target.value)"><br />
-    <h3>OJO, 3 TIPOS DE ENLACE:</h3>
+<h3>OJO, 3 TIPOS DE ENLACE:</h3>
 <ul>
-    <li><a href="saludoenrutado">Primero: Ir al componente saludo enrutado a que me salude (NO FUNCIONA PORQUE NO TIENE EL PARAMETRO)</a></li>
+    <li><a href="saludoenrutado">Primero: Ir al componente saludo enrutado a que me salude (NO FUNCIONA PORQUE NO TIENE
+            EL PARAMETRO)</a></li>
 
     <li><a href="saludoenrutado/{{nombreUsuario}}"> Segundo: Ir al componente saludo enrutado a que me salude</a></li>
 
-    <li><a [href]="'saludoenrutado/' + nombreUsuario">Tercero: Ir al componente saludo enrutado a que me salude (usando binding)</a></li>
+    <li><a [href]="'saludoenrutado/' + nombreUsuario">Tercero: Ir al componente saludo enrutado a que me salude (usando
+            binding)</a></li>
 
-    <li><button (click)="irASaludoEnrutado()">Cuarto: Ir al componente saludo enrutado a que me salude 
-        (usando método en el controlador)</button></li>
+    <li><button (click)="irASaludoEnrutado()">Cuarto: Ir al componente saludo enrutado a que me salude
+            (usando método en el controlador)</button></li>
 
-    <li><button (click)="irASaludoEnrutado2()">Quinto: Ir al componente saludo enrutado a que me salude (usando método)</button></li>
+    <li><button (click)="irASaludoEnrutado2()">Quinto: Ir al componente saludo enrutado a que me salude (usando
+            método)</button></li>
 
-     <li>
-        <a [routerLink]="['/saludoenrutado', nombreUsuario]">Sexto: Ir al componente saludo enrutado a que me salude 
+    <li>
+        <a [routerLink]="['/saludoenrutado', nombreUsuario]">Sexto: Ir al componente saludo enrutado a que me salude
             (usando routerLink en plantilla)</a>
-     </li>
+    </li>
 
 </ul>
 

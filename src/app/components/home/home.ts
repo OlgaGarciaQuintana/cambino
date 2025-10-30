@@ -7,30 +7,24 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
-  standalone: true
+  standalone: true,
 })
 export class Home {
+  nombreUsuario: string = '';
 
-  nombreUsuario: string = "";
+  constructor(public oRouter: Router) {}
 
-  constructor(public oRouter: Router){
-   
-  }
+  ngOnInit() {}
 
-  ngOnInit(){
-   
-  }
-
-  cambiarNombre(strNuevoNombre:string){
+  cambiarNombre(strNuevoNombre: string) {
     this.nombreUsuario = strNuevoNombre;
   }
 
   irASaludoEnrutado() {
-    window.location.href = "saludoenrutado/" + this.nombreUsuario;
+    window.location.href = 'saludoenrutado/' + this.nombreUsuario;
   }
 
   irASaludoEnrutado2() {
-    this.oRouter.navigate(["saludoenrutado", this.nombreUsuario]);
+    this.oRouter.navigate(['saludoenrutado', this.nombreUsuario]);
   }
-  
 }

@@ -28,15 +28,15 @@
 <h2>Vamos a poner ejemplos de comunicación de la plantilla (html) al controlador (ts)</h2>
 
 <!--cambia el nombre de Ana a Juan-->
-<button (click)="cambiarNombre()">Cambiar Nombre</button> <br/>
+<button (click)="cambiarNombre()">Cambiar Nombre</button> <br />
 
 <!--este cambia en toda la pagina, HASTA EN EL INPUT DE ABAJO, porque se lo hemos dicho-->
-Nombre1: <input type="text" (input)="cambiarNombreInput($event)" /><br/>
+Nombre1: <input type="text" (input)="cambiarNombreInput($event)" /><br />
 
 <h2>Double data binding</h2>
 
 <!--este cambia en toda la pagina, menos en el input de arriba, porque no se lo hemos dicho-->
-Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
+Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br />
 <p>Nombre actual: {{ nombre }}</p>
 
 <h1>Control del flujo en la plantila</h1>
@@ -49,21 +49,21 @@ Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
 <div *ngIf="true">Este es un mensaje de éxito (DEPRECADO)</div>
 
 @if (nohayError()) {
-    <div>Este es un mensaje de error</div>
+<div>Este es un mensaje de error</div>
 } @else {
-    <div>Este es un mensaje de éxito</div>
+<div>Este es un mensaje de éxito</div>
 }
 
 @if (false) {
-    <div>Este es un mensaje de error</div>
+<div>Este es un mensaje de error</div>
 } @else {
-    <div>Este es un mensaje de éxito</div>
+<div>Este es un mensaje de éxito</div>
 }
 
 @if(mostrar) {
-    <h3>Mostrando el contenido1</h3>
+<h3>Mostrando el contenido1</h3>
 } @else {
-    <h3>Mostrando el contenido2</h3>
+<h3>Mostrando el contenido2</h3>
 }
 
 <button (click)="flipMostrar()">Flip Mostrar</button>
@@ -76,26 +76,26 @@ Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
 
 <ul>
     @for (item of items; track item; let i = $index) {
-        <li>{{ i +1 }} - {{ item }}</li>
+    <li>{{ i +1 }} - {{ item }}</li>
     }
 </ul>
 
 @for (i of [0,1,2,3,4,5]; track i) {
-    <p>VAlor de i = {{ i }}</p>
+<p>VAlor de i = {{ i }}</p>
 }
 
 <h3>Directiva switch mejor @ switch que @ case @ default </h3>
 
 @switch(nombre) {
-  @case('Olga') {
-    <p>Hola Olga! Eres el administrador.</p>
-  }
-  @case('Ana') {
-    <p>Hola Ana! Eres una usuaria normal.</p>
-  }
-  @default {
-    <p>Hola invitado! No estás registrado.</p>
-  }
+@case('Olga') {
+<p>Hola Olga! Eres el administrador.</p>
+}
+@case('Ana') {
+<p>Hola Ana! Eres una usuaria normal.</p>
+}
+@default {
+<p>Hola invitado! No estás registrado.</p>
+}
 }
 
 <h1>Ejemplo de expresiones en la plantilla</h1>
@@ -114,7 +114,7 @@ Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br/>
 <p>Fecha actual: {{ today | date:'longDate' }}</p>
 <p>Hora actual: {{ today | date:'shortTime' }}</p>
 <p>Fecha y hora actual: {{ today | date:'full' }}</p>
-<p>Fecha personalizada: {{ today | date:'EEEE, MMMM d, y' }}</p>    
+<p>Fecha personalizada: {{ today | date:'EEEE, MMMM d, y' }}</p>
 <p>Número formateado: {{ 1234567.89 | number:'1.2-2' }}</p>
 <p>Número formateado por rafa: {{ .89 | number:'2.4-6' }}</p>
 <p>Número formateado por rafa: {{ .89879879878978 | number:'2.4-6' }}</p>
