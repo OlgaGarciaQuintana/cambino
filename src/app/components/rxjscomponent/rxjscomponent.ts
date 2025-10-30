@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { interval, merge, Observable, of } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { BehaviorSubject, interval, merge, Observable, of, Subject } from 'rxjs';
+import { filter, map, take } from 'rxjs/operators';
 
 class Persona {
   nombre: string = "";
@@ -167,14 +167,19 @@ export class Rxjscomponent {
     }, 5000)
   }
 
+  // a partir de dos observables los combino y me suscribo al resultado
   ejemplo09() {
     console.log("Ejecutando ejemplo 09 de RxJS");
-    const intervalo1$ = interval(1000);
-    const intervalo2$ = interval(1500);
+    const intervalo1$ = interval(810);
+    const intervalo2$ = interval(340);
     // combinar con el operador merge los dos intervalos
     const combinado1$ = merge(intervalo1$, intervalo2$);
     const combinado2$ = combinado1$.pipe(
-      take(10)
+      take(20),
+      //filtra todos los numeros pares
+      filter(numero => numero % 2 === 0),
+      //map para sumar 1 a cada número
+      map(numero => numero + 1)
     )
     combinado2$.subscribe({
       next: numero => console.log("Numero recibido: " + numero),
@@ -183,8 +188,64 @@ export class Rxjscomponent {
     });
   }
 
-  //empezamos con el ejemplo del filter
+  //a partir de 1 observable nos suscribimos con dos suscriptores diferentes
+  ejemplo10() {
+    console.log("Ejecutando ejemplo 10 de RxJS");
+    const intervalo$ = interval(500);
+     const subscription1 = intervalo$.subscribe({
+      next: numero => console.log("Suscriptor 1 - Numero recibido: " + numero),
+      error: err => console.log("Suscriptor 1 - Error al recibir el numero", err),
+      complete: () => console.log("Suscriptor 1 - Flujo de datos completado.")
+    });
+    const subscription2 = intervalo$.subscribe({
+      next: numero => console.log("Suscriptor 2 - Numero recibido: " + numero),
+      error: err => console.log("Suscriptor 2 - Error al recibir el numero", err),
+      complete: () => console.log("Suscriptor 2 - Flujo de datos completado.")
+    });
+    //Dessucribirse después de 5000 ms para detener la emisión
+    setTimeout(() => {
+      subscription1.unsubscribe();
+      console.log("Desuscrito del observable de intervalo el subscriptor 1.");
+    }, 5000)
+    setTimeout(() => {
+      subscription2.unsubscribe();
+      console.log("Desuscrito del observable de intervalo el subscriptor 2.");
+    }, 5000)
+  }
 
-  //concepto de subject
-  //ejemplos de los distintos tipos de subject: subject, behaviorSubject, replaySubject, asyncSubject
+  // concepto de subject
+  ejemplo11() {
+    console.log("Ejecutando ejemplo 11 de RxJS: Subject");
+    const subject = new Subject<string>();
+    subject.subscribe({
+      next: (value) => console.log("s1: Valor recibido en el subject: " + value),
+      complete: () => console.log("s1: Flujo de datos completado en el subject.")
+    });
+    subject.next("Hola");
+    subject.next("Mundo");
+    subject.subscribe({
+      next: (value) => console.log("s2: Segundo suscriptor - Valor recibido en el subject: " + value),
+      complete: () => console.log("s2: Segundo suscriptor - Flujo de datos completado en el subject.")
+    });
+    subject.next("¡Saludos desde el Subject!");
+    subject.complete();
+  }
+
+  ejemplo12() {
+    console.log("Ejecutando ejemplo 12 de RxJS: BehaviorSubject");
+    const subject = new BehaviorSubject<string>('Valor inicial');
+    subject.subscribe({
+      next: (value) => console.log("s1: Valor recibido en el subject: " + value),
+      complete: () => console.log("s1: Flujo de datos completado en el subject.")
+    });
+    subject.next("Hola");
+    subject.next("Mundo");
+    subject.subscribe({
+      next: (value) => console.log("s2: Segundo suscriptor - Valor recibido en el subject: " + value),
+      complete: () => console.log("s2: Segundo suscriptor - Flujo de datos completado en el subject.")
+    });
+    subject.next("¡Saludos desde el Subject!");
+    subject.complete();
+  }
+
 }
