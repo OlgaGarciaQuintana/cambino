@@ -8,5 +8,10 @@ import { Hijo } from "../hijo/hijo";
   styleUrl: './padre.css',
 })
 export class PadreComponent {
+  mensajeHijo: string = '';
+
+  enviar(mensaje: string) {
+    this.mensajeHijo = mensaje;
+  }
 
 }
