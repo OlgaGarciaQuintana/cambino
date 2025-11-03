@@ -21,7 +21,6 @@ export class PostListComponent {
 
   getPosts() {
     this.JsonplaceholderService.getAllPosts().subscribe(posts => {
-      console.log(posts);
       this.posts = posts;
     });
   }
