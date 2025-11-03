@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class Ejercicio01clase {
+Home(): any {
+throw new Error('Method not implemented.');
+}
   nombre = 'Olga';
   titulo = 'Deku';
   ancho = 300;
@@ -16,6 +19,7 @@ export class Ejercicio01clase {
   mostrar = false;
   items = ['Manzana', 'Banana', 'Naranja'];
   today = new Date();
+activeORoute: any;
 
   constructor() {
     console.log('constructor');

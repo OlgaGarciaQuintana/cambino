@@ -120,3 +120,6 @@ Nombre2: <input [value]="nombre" (input)="cambiarNombreInput($event)" /><br />
 <p>Número formateado por rafa: {{ .89879879878978 | number:'2.4-6' }}</p>
 <p>Moneda formateada: {{ 1234567.89 | currency:'USD' }}</p>
 <p>Porcentaje formateado: {{ 0.8534 | percent:'1.2-2' }}</p>
+
+//cuando estemos en este fichero, en el menu conceptual, el enlace al home debe estar activo
+<div [ngClass]="{error: !hasError}">Esto es un error</div>
