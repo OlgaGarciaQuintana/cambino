@@ -12,7 +12,7 @@ export const routes: Routes = [
     {path: "", component: Home },
     {path: "home", component: Home},
     {path: "ejer01", component: Ejercicio01clase},
-     {path: "saludoenrutado", component: Saludoenrutado },
+    {path: "saludoenrutado", component: Saludoenrutado },
     {path: "saludoenrutado/:nombre", component: Saludoenrutado },
     {path: "landing", component: Landing},
     {path: "rx", component: Rxjscomponent },
