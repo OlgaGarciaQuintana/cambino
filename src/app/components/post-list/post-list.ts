@@ -9,13 +9,20 @@ import { JsonplaceholderService } from '../../services/jsonplaceholder-service';
 })
 export class PostListComponent {
 
+  posts: any;
+
   constructor(private JsonplaceholderService: JsonplaceholderService) {
 
+  }
+
+  ngOnInit() {
+    this.getPosts();
   }
 
   getPosts() {
     this.JsonplaceholderService.getAllPosts().subscribe(posts => {
       console.log(posts);
+      this.posts = posts;
     });
   }
 
