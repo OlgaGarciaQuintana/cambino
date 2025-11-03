@@ -6,6 +6,7 @@ import { Saludoenrutado } from './components/saludoenrutado/saludoenrutado';
 import { Rxjscomponent } from './components/rxjscomponent/rxjscomponent';
 import { PadreComponent } from './components/padre/padre';
 import { AleatorioComponent } from './components/aleatorio/aleatorio';
+import { PostListComponent } from './components/post-list/post-list';
 
 export const routes: Routes = [
     //La ruta predefinida va a ser home
@@ -18,4 +19,5 @@ export const routes: Routes = [
     {path: "rx", component: Rxjscomponent },
     {path: "padre", component: PadreComponent },
     {path: "aleatorio", component: AleatorioComponent },
+    {path: "posts", component: PostListComponent},
 ];
