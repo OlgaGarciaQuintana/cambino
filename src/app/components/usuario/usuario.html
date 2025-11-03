@@ -1,1 +1,10 @@
-<p>usuario works!</p>
+<h2>Lista de Usuarios</h2>
+
+@for (item of usuarios; track $index) {
+  <div>
+    <h5>{{ item.name }} {{ item.username }}</h5>
+    <p>empresa: {{ item.company.name }}</p>
+    <button (click)="verDatosUsuario(item)">Ver datos de usuario</button>
+    <hr>
+  </div>
+}
