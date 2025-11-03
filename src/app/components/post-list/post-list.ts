@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { JsonplaceholderService } from '../../services/jsonplaceholder-service';
+import { Post } from '../../model/postInterface';
 
 @Component({
   selector: 'app-post-list',
@@ -9,7 +10,7 @@ import { JsonplaceholderService } from '../../services/jsonplaceholder-service';
 })
 export class PostListComponent {
 
-  posts: any;
+  posts: Post[] = [];
 
   constructor(private JsonplaceholderService: JsonplaceholderService) {
 
@@ -20,7 +21,8 @@ export class PostListComponent {
   }
 
   getPosts() {
-    this.JsonplaceholderService.getAllPosts().subscribe(posts => {
+    this.JsonplaceholderService.getAllPosts().subscribe((posts: Post[]) => {
+      console.log(posts);
       this.posts = posts;
     });
   }
