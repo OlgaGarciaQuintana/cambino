@@ -8,6 +8,7 @@ import { PadreComponent } from './components/padre/padre';
 import { AleatorioComponent } from './components/aleatorio/aleatorio';
 import { PostListComponent } from './components/post-list/post-list';
 import { UsuarioComponent } from './components/usuario/usuario';
+import { UsuarioAPI } from './components/usuario-api/usuario-api';
 
 export const routes: Routes = [
     //La ruta predefinida va a ser home
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path: "padre", component: PadreComponent },
     {path: "aleatorio", component: AleatorioComponent },
     {path: "posts", component: PostListComponent},
-    {path: "usuario", component: UsuarioComponent}
+    {path: "usuario", component: UsuarioComponent},
+    {path: "api", component: UsuarioAPI}
 ];
