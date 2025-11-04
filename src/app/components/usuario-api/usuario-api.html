@@ -1,1 +1,14 @@
-<p>usuario-api works!</p>
+<h1>Lista de Personajes de Demon Slayer</h1>
+
+<p>Total de personajes: {{ personajes.length }}</p>
+
+@for (item of personajes; track item.id) {
+  <div>
+    <img [src]="item.img" [alt]="item.name" width="100">
+    <h5>{{ item.name }}</h5>
+    <hr>
+    <p>Edad: {{ item.age }} </p>
+    <p>Género: {{ item.gender }}</p>
+    <hr>
+  </div>
+}
