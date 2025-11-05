@@ -3,6 +3,7 @@ import { oUsuarioService } from '../../services/usuario-service';
 import { User } from '../../model/userInterface';
 import { MatDialog } from '@angular/material/dialog';
 import { DatosUnrouted } from '../datos-unrouted/datos-unrouted';
+import { Datos2Unrouted } from '../datos2-unrouted/datos2-unrouted';
 
 @Component({
   selector: 'app-usuario',
@@ -40,9 +41,17 @@ export class UsuarioComponent {
         usuario: user,
       }
     });
+  }
 
+  verDatosUsuario2(user: User) {
+    console.log('Datos del padre...', user);
 
-
-
+    this.oMatDialog.open(Datos2Unrouted, {
+      height: '400px',
+      width: '600px',
+      data: {
+        usuario_id: user.id,
+      }
+    });
   }
 }

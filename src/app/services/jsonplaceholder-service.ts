@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post } from '../model/postInterface';
+import { User } from '../model/userInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,9 @@ export class JsonplaceholderService {
     return this.oHttpClient.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
-
+  getUser(id:number):Observable<User[]> {
+    return this.oHttpClient.get<User[]>('https://jsonplaceholder.typicode.com/users/$(id)');
+  }
 
 
 }
