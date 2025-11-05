@@ -31,13 +31,14 @@ export class UsuarioComponent {
   }
 
   verDatosUsuario(user: User) {
-    console.log('Datos del usuario...', user);
-    alert(`Nombre: ${user.name}\nUsuario: ${user.username}\nEmail: ${user.email}\nTeléfono: ${user.phone}\nWeb: ${user.website}`);
-
+    console.log('Datos del padre...', user);
 
     this.oMatDialog.open(DatosUnrouted, {
       height: '400px',
       width: '600px',
+      data: {
+        usuario: user,
+      }
     });
 
 

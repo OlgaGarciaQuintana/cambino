@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { User } from '../../model/userInterface';
 
 @Component({
   selector: 'app-datos-unrouted',
@@ -7,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './datos-unrouted.css',
 })
 export class DatosUnrouted {
+  data = inject(MAT_DIALOG_DATA);
+  oUsuario: User = {} as User;
 
+  ngOnInit() {
+    console.log('Datos recibidos en el hijo en el diálogo:', this.data);
+    this.oUsuario=this.data.usuario;
+  }
 }
